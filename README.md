@@ -11,3 +11,7 @@ Exception: Separate assessment forbids assistance and must remain a human step.
 Independent expected result: {"openJobs": 2, "originalRows": 6, "correctedRows": 10, "issue": "47", "status": "Ready for review"}
 
 From recursive parent checkout: `python tools/demo.py reset consultancy-contract`, `python tools/demo.py run consultancy-contract`, `python tools/demo.py record consultancy-contract`.
+
+## Executable ownership
+
+`steps.cjs` owns executable business steps and source scopes; the parent browser worker injects UI-only capabilities. `assertions.py` independently derives expected outcomes and business checks; the parent verifier combines them with workbook preservation checks. `fixtures.json` and `cues.json` remain the pinned synthetic data and presentation contract.
